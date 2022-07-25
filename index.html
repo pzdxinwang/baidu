@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+	
+	<style type="text/css">
+		body{background-color:#F3E3E4}
+	input {
+		width: 200px;
+		height: 30px;
+		padding-left: 10px;
+		border: 1px solid lightblue;
+		border-radius: 10px;
+		outline: none;
+		text-align: center;
+	}
+	div.template {
+		color:blue;
+		margin: 10px;
+		text-align: match-parent
+}
+
+</style>
+</head>
+
+<body>
+	
+  <div id="app">
+    <input type="text" v-model="msg.a">
+    <h1 v-text="msg.a"></h1>
+    <div class="template"></div>
+    <ul>
+      <li>百度</li>
+      <li>前端训练营</li>
+		<li>结课大作业</li>
+    </ul>
+    <p>{{msg.a}} {{msg.b}}</p>
+  </div>
+
+  <script src="./watcher.js"></script>
+  <script src="./observer.js"></script>
+  <script src="./compile.js"></script>
+  <script src="./MVVM.js"></script>
+  <script>
+    let vm = new MVVM({
+      el: "#app",
+      data: {
+        msg: {
+          a: "百度前端训练营",
+          b: "顺利结课"
+        },
+        b: null,
+        c: {
+          c_1: "wait..."
+        }
+      }
+    })
+  </script>
+</body>
+
+</html>
